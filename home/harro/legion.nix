@@ -42,7 +42,7 @@
     yaml.enable = true;
     rust.enable = true;
     arduino.enable = true;
-    angular.enable = true;
+    # angular.enable = true;
   };
 
   # Packages
@@ -54,6 +54,7 @@
     discord
     wdisplays
     qemu_full
+    android-studio
     # blender
     # quartus-prime-lite
 

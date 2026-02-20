@@ -11,6 +11,12 @@
   config = lib.mkIf config.nvim.lang.angular.enable {
     home.packages = with pkgs; [
       nodejs_20
+      pkg-config
+      cairo
+      pango
+      pixman
+      libpng
+      giflib
     ];
 
     programs.nixvim.plugins.lsp.servers.angularls = {
