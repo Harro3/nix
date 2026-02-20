@@ -54,7 +54,6 @@
     discord
     wdisplays
     qemu_full
-    android-studio
     # blender
     # quartus-prime-lite
 
