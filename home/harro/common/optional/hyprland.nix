@@ -124,6 +124,17 @@
       cat "$FILE"
     '';
   };
+
+  darkThemeConfig =
+    if !config.darkTheme
+    then ""
+    else ''
+      ##################
+      ### DARK THEME ###
+      ##################
+
+      exec-once = systemctl --user import-environment GTK_THEME QT_QPA_PLATFORMTHEME
+    '';
 in {
   options = {
     homemodules.hyprland.enable = lib.mkEnableOption "hyprland";
@@ -139,6 +150,8 @@ in {
     catppuccin.hyprland.enable = true;
 
     home.file.".config/hypr/hyprland.conf".text = ''
+      ${darkThemeConfig}
+
       ################
       ### MONITORS ###
       ################

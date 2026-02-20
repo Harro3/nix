@@ -7,6 +7,7 @@
   home.username = "harro";
   home.homeDirectory = "/home/harro";
   hyprpaperWallpaperPath = ./wallpapers/mountains.jpg;
+  darkTheme = true;
 
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowBroken = true;
