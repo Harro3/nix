@@ -42,6 +42,7 @@
     yaml.enable = true;
     rust.enable = true;
     arduino.enable = true;
+    angular.enable = true;
   };
 
   # Packages
