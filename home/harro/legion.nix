@@ -22,10 +22,10 @@
   homemodules.hyprpaper.enable = true;
   homemodules.mako.enable = true;
   homemodules.tmux.enable = true;
-  homemodules.gemini.enable = true;
+  homemodules.gemini.enable = false;
   homemodules.sesh.enable = true;
-  homemodules.kicad.enable = true;
-  homemodules.gaming.enable = true;
+  homemodules.kicad.enable = false;
+  homemodules.gaming.enable = false;
 
   # Nixvim langs
   nvim.lang = {
@@ -36,13 +36,12 @@
     json.enable = true;
     markdown.enable = true;
     nix.enable = true;
-    obsidian.enable = true;
+    obsidian.enable = false;
     python.enable = true;
     tex.enable = true;
     yaml.enable = true;
     rust.enable = true;
     arduino.enable = true;
-    # angular.enable = true;
   };
 
   # Packages
@@ -53,8 +52,8 @@
     slack
     discord
     wdisplays
-    qemu_full
-    android-studio
+    # qemu_full
+    # android-studio
     # blender
     # quartus-prime-lite
 
