@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ./options
 
@@ -8,6 +12,7 @@
   ];
 
   programs.nixvim.enable = true;
+  programs.nixvim.nixpkgs.source = inputs.nixpkgs;
 
   programs.nixvim.plugins.lsp.servers.ts_query_ls.package = null;
 

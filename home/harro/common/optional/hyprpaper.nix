@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options = {
     homemodules.hyprpaper.enable = lib.mkEnableOption "hyprpaper";
     hyprpaperWallpaperPath = lib.mkOption {
@@ -20,8 +21,10 @@
     ];
 
     home.file.".config/hypr/hyprpaper.conf".text = ''
-      preload = ${config.hyprpaperWallpaperPath}
-      wallpaper=,${config.hyprpaperWallpaperPath}
+      wallpaper {
+        monitor =
+        path = ${config.hyprpaperWallpaperPath}
+      }
     '';
   };
 }

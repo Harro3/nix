@@ -14,7 +14,7 @@
     "clock",
     "tray",
     "custom/lock",
-    "custom/power"
+    "custom/power",
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -25,13 +25,12 @@
       "2": "󰈹",
       "3": "",
       "4": "",
-      "5": "",
-      "default": ""
-    }
+      "default": "",
+    },
   },
   "tray": {
     "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
   },
   "custom/music": {
     "format": "󰝚  {}",
@@ -40,17 +39,17 @@
     "tooltip": false,
     "exec": "playerctl metadata --format='{{artist}} - {{title}}'",
     "on-click": "playerctl play-pause",
-    "max-length": 50
+    "max-length": 50,
   },
   "clock": {
     "timezone": "Europe/Paris",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "   {:%H:%M}"
+    "format": "   {:%H:%M}",
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon}   {capacity}%",
     "format-full": "{icon}   {capacity}%",
@@ -68,7 +67,7 @@
       "󰂁",
       "󰂂",
       "󰁹"
-    ]
+    ],
   },
   "pulseaudio": {
     "format": "{icon}   {volume}%",
@@ -78,25 +77,25 @@
         "",
         "",
         " "
-      ]
+      ],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "custom/lock": {
     "tooltip": false,
     "on-click": "hyprlock",
-    "format": ""
+    "format": "",
   },
   "custom/power": {
     "format": "⏻ ",
     "on-click": "poweroff",
-    "tooltip": false
+    "tooltip": false,
   },
   "network": {
     "interval": 1,
     "format-disconnected": "Disconnected ⚠",
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-linked": "{ifname} (No IP) ⚠",
-    "format-wifi": "{essid} ({signalStrength}%) "
-  }
+    "format-wifi": "{essid} ({signalStrength}%) ",
+  },
 }

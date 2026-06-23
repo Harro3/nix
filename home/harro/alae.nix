@@ -20,7 +20,6 @@
   homemodules.hyprpaper.enable = true;
   homemodules.mako.enable = true;
   homemodules.tmux.enable = true;
-  homemodules.onedrive.enable = true;
   homemodules.gemini.enable = true;
   homemodules.sesh.enable = true;
 

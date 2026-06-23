@@ -5,7 +5,8 @@
   inputs,
   vars,
   ...
-}: {
+}:
+{
   options = {
     homemodules.firefox.enable = lib.mkEnableOption "Firefox browser";
   };
@@ -13,6 +14,7 @@
   config = lib.mkIf config.homemodules.firefox.enable {
     programs.firefox = {
       enable = true;
+      configPath = ".mozilla/firefox";
 
       profiles.harro = {
         id = 0;
@@ -23,25 +25,25 @@
         bookmarks.settings = [
           {
             name = "lumo";
-            tags = ["proton"];
+            tags = [ "proton" ];
             keyword = "lumo";
             url = "https://lumo.proton.me";
           }
           {
             name = "mail";
-            tags = ["proton"];
+            tags = [ "proton" ];
             keyword = "mail";
             url = "https://mail.proton.me";
           }
           {
             name = "drive";
-            tags = ["proton"];
+            tags = [ "proton" ];
             keyword = "drive";
             url = "https://drive.proton.me";
           }
           {
             name = "pass";
-            tags = ["proton"];
+            tags = [ "proton" ];
             keyword = "pass";
             url = "https://pass.proton.me";
           }
@@ -96,7 +98,7 @@
             ];
 
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@np"];
+            definedAliases = [ "@np" ];
           };
         };
         search.force = true;

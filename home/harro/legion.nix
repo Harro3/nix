@@ -76,6 +76,7 @@
     restream
 
     protonmail-desktop
+    mistral-vibe
     # protonvpn-gui
     # proton-pass
   ];

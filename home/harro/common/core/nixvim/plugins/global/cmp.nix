@@ -16,7 +16,6 @@ in
         plugins.cmp-path.enable = true;
         plugins.cmp-latex-symbols.enable = true;
         plugins.cmp-nvim-lsp.enable = true;
-        plugins.cmp-emoji.enable = true;
         plugins.cmp-treesitter.enable = true;
 
         plugins.cmp = {
@@ -31,7 +30,6 @@ in
               {name = "path";}
               {name = "buffer";}
               {name = "luasnip";}
-              {name = "emoji";}
               {
                 name = "latex_symbols";
                 option.strategy = 2;
@@ -51,8 +49,6 @@ in
                     luasnip = '[SNIP]',
                     buffer = '[BUF]',
                     path = '[PATH]',
-                    emoji = '[EMOJI]',
-                    latex_symbols = '[LATEX]',
                     treesitter = '[TREE]',
                   }
 

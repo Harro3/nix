@@ -3,5 +3,5 @@
   inputs,
   ...
 }: {
-  imports = [inputs.catppuccin.homeModules.catppuccin inputs.nixvim.homeManagerModules.nixvim] ++ libharro.allModules ./.;
+  imports = [inputs.catppuccin.homeModules.catppuccin inputs.nixvim.homeModules.nixvim] ++ libharro.allModules ./.;
 }

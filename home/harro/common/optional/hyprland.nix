@@ -269,7 +269,6 @@ in {
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle {
-          pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
           preserve_split = true # You probably want this
       }
 
@@ -307,11 +306,6 @@ in {
           }
       }
 
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
-      gestures {
-          workspace_swipe = false
-      }
-
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
       device {
@@ -345,7 +339,6 @@ in {
 
 
       # bind = $mainMod, P, pseudo, # dwindle
-      bind = $mainMod, T, togglesplit, # dwindle
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, H, movefocus, l
@@ -419,24 +412,14 @@ in {
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
-
       bind = $mainMod SHIFT, code:59, movecurrentworkspacetomonitor, l
       bind = $mainMod SHIFT, code:60, movecurrentworkspacetomonitor, r
 
-      windowrulev2 = opacity 0.8 override 0.7 override, class:^(kitty)$
+      windowrule = match:class ^(kitty)$, opacity 0.8 override 0.7 override
 
-      windowrulev2 = workspace 2, class:^(firefox)$
-      windowrulev2 = workspace 3, class:^(discord)$
-      windowrulev2 = workspace 4, title:^(Spotify Premium)$
-
-      # Ignore maximize requests from apps. You'll probably like this.
-      windowrulev2 = suppressevent maximize, class:.*
-
-      # Fix some dragging issues with XWayland
-      windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
-
+      windowrule = match:class ^(firefox)$, workspace 2
+      windowrule = match:class ^(discord)$, workspace 3
+      windowrule = match:title ^(Spotify Premium)$, workspace 4
 
       bind = $mainMod SHIFT, S, exec, hyprshot -m region
     '';

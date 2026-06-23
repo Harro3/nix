@@ -14,7 +14,7 @@
 
         theme = null;
 
-        layout = [
+        settings.layout = [
           {
             type = "padding";
             val = 2;
