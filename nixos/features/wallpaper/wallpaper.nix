@@ -1,0 +1,3 @@
+{
+  flake.wallpaper = ./mountains.jpg;
+}
