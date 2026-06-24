@@ -1,3 +1,0 @@
-{libharro, ...}: {
-  imports = libharro.allModules ./.;
-}
