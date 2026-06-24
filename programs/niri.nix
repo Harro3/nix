@@ -1,5 +1,5 @@
 {self, inputs, ...}: {
-  perSystem = {pkgs, lib, system, ...}: {
+  perSystem = {pkgs, lib, system, self', ...}: {
     packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
 
@@ -180,6 +180,7 @@
 
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+D".spawn = lib.getExe self'.packages.fuzzel;
           "Mod+Q".close-window = _: {};
         };
       };
