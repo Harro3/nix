@@ -21,4 +21,3 @@
     in
     mkFlake { imports = importTree ./.; };
 }
-

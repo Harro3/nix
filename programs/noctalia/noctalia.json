@@ -219,7 +219,7 @@
       "clockFormat": "hh\\nmm",
       "passwordChars": false,
       "lockScreenMonitors": [],
-      "lockScreenBlur": 0,
+      "lockScreenBlur": 0.5,
       "lockScreenTint": 0,
       "keybinds": {
         "keyUp": [
@@ -295,9 +295,9 @@
       ]
     },
     "wallpaper": {
-      "enabled": false,
+      "enabled": true,
       "overviewEnabled": false,
-      "directory": "/home/harro/Pictures/Wallpapers",
+      "directory": "/nix/store/63j3y0bz0sq83wdv49czz07y5r51mx8r-noctalia-wallpapers",
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
       "showHiddenFiles": false,
@@ -693,8 +693,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "HDMI-A-1": "/nix/store/7pw3mnnyilkvifj68ngsg36831i23k9c-noctalia-shell-4.7.6/share/noctalia-shell/Assets/Wallpaper/noctalia.png",
-      "eDP-1": "/nix/store/7pw3mnnyilkvifj68ngsg36831i23k9c-noctalia-shell-4.7.6/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
+      "HDMI-A-1": "/nix/store/63j3y0bz0sq83wdv49czz07y5r51mx8r-noctalia-wallpapers/fiisvpaarsblp2blniahl15gwfny7ifx-mountains.jpg",
+      "eDP-1": "/nix/store/63j3y0bz0sq83wdv49czz07y5r51mx8r-noctalia-wallpapers/fiisvpaarsblp2blniahl15gwfny7ifx-mountains.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -730,7 +730,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1782324114000
+      "lastSeenTs": 1782339603000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.6"

@@ -107,9 +107,6 @@
 
             spawn-at-startup = [
               noctaliaExe
-              (lib.getExe (
-                pkgs."writeShellScriptBin" "wallpaper" "${lib.getExe pkgs.swaybg} -i ${self.wallpaper} -m fill"
-              ))
             ];
 
             hotkey-overlay = {
@@ -278,7 +275,7 @@
               "Mod+Ctrl+WheelScrollDown".focus-workspace-down = _: { };
               "Mod+Ctrl+WheelScrollUp".focus-workspace-up = _: { };
 
-              "Mod+Shift+S".spawn-sh = "${lib.getExe pkgs.hyprshot} -m region -o ~/Pictures/screenshots/";
+              "Mod+Shift+S".spawn-sh = "${lib.getExe pkgs.hyprshot} -m region -o ~/Pictures/Screenshots/";
             };
 
             window-rules = [

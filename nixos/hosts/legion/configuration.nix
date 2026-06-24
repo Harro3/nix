@@ -1,7 +1,6 @@
 {
   self,
   inputs,
-  lib,
   ...
 }:
 {
@@ -16,9 +15,15 @@
       self.nixosModules.core
 
       self.nixosModules.user
-      self.nixosModules.limine
+
+      self.nixosModules.grub
+      self.nixosModules.greetd
 
       self.nixosModules.niri
+    ];
+
+    environment.systemPackages = with pkgs; [
+      git
     ];
 
     nix.settings.experimental-features = [
