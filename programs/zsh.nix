@@ -9,7 +9,20 @@
       inherit pkgs;
 
       zshrc.content = ''
-          eval "$(${lib.getExe pkgs.starship} init zsh)"
+	# Zinit home var
+	ZINIT_HOME="''${XDG_DATA_HOME:-''${HOME}/.local/share}/zinit/zinit.git"
+
+	# Install zinit if not installed
+	if [ ! -d "$ZINIT_HOME" ]; then
+		mkdir -p "$(dirname $ZINIT_HOME)"
+		git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	fi
+
+	# load zinit
+	source "''${ZINIT_HOME}/zinit.zsh"
+
+
+	eval "$(${lib.getExe self'.packages.starship} init zsh)"
         '';
     };
   };
