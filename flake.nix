@@ -22,18 +22,37 @@
       flake = false;
     };
   };
+  outputs = inputs:
+let
+  lib = inputs.nixpkgs.lib;
 
-  outputs =
-    inputs:
+  importTree = dir:
     let
-      inherit (inputs.nixpkgs) lib;
-      inherit (lib.fileset) toList fileFilter;
+      readDirRecursive = path:
+        let
+          entries = builtins.readDir path;
+        in
+          lib.concatLists (lib.mapAttrsToList (name: type:
+            let full = path + "/${name}";
+            in
+              if type == "directory" then
+                if lib.hasPrefix "_" name
+                then []
+                else readDirRecursive full
 
-      isNixModule = file: file.hasExt "nix" && file.name != "flake.nix" && !lib.hasPrefix "_" file.name;
+              else if lib.hasSuffix ".nix" name && name != "flake.nix"
+              then [ full ]
 
-      importTree = path: toList (fileFilter isNixModule path);
-
-      mkFlake = inputs.flake-parts.lib.mkFlake { inherit inputs; };
+              else []
+          ) entries);
     in
-    mkFlake { imports = importTree ./.; };
+      readDirRecursive dir;
+
+  mkModules = dir:
+    lib.map (p: import p) (importTree dir);
+
+in
+inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  imports = mkModules ./.;
+};
 }

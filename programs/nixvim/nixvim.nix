@@ -15,10 +15,11 @@
     }:
     let configuration = inputs.nixvim.lib.evalNixvim {
       system = pkgs.stdenv.hostPlatform.system;
-      modules = [./config];
+      modules = [./_config ];
     };
     in
     {
+      checks.default = configuration.config.build.test;
       packages.nixvim = configuration.config.build.package;
     };
 }
