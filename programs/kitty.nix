@@ -9,6 +9,10 @@
     packages.kitty = inputs.wrapper-modules.wrappers.kitty.wrap {
       inherit pkgs;
 
+        extraPackages = [
+    pkgs.nerd-fonts.fira-code
+  ];
+
       settings = {
         foreground = "#cdd6f4";
         background = "#1e1e2e";

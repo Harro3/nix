@@ -17,7 +17,7 @@
       packages.shell = inputs.wrappers.lib.wrapPackage {
         inherit pkgs;
 
-        package = pkgs.zsh;
+        package = selfpkgs.zsh;
 
         runtimeInputs = [
           pkgs.git
