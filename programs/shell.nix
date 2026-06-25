@@ -20,6 +20,8 @@
         package = selfpkgs.zsh;
 
         runtimeInputs = [
+          selfpkgs.nixvim
+
           pkgs.git
           pkgs.file
           pkgs.unzip
