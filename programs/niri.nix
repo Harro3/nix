@@ -18,7 +18,7 @@
 
         settings =
           let
-            noctaliaExe = lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia-shell;
+            noctaliaExe = lib.getExe self'.packages.noctalia-shell;
           in
           {
             input = {
@@ -191,7 +191,7 @@
             };
 
             binds = {
-              "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+              "Mod+Return".spawn-sh = lib.getExe self'.packages.kitty;
 
               "Mod+Q".close-window = _: { };
               "Mod+F".maximize-column = _: { };
