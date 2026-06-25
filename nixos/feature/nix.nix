@@ -9,6 +9,8 @@
       enable = true;
       silent = false;
       loadInNixShell = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
       direnvrcExtra = "";
       nix-direnv = {
         enable = true;

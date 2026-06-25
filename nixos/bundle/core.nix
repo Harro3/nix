@@ -13,6 +13,7 @@
 	self.nixosModules.secrets
 	self.nixosModules.documentation
 	self.nixosModules.locales
+	self.nixosModules.fonts
       ];
     };
 }
