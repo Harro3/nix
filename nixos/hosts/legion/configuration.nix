@@ -21,6 +21,7 @@
       self.nixosModules.nix
 
       self.nixosModules.virtualization
+      self.nixosModules.yubikey
     ];
 
     networking = {
