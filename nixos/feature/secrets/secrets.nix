@@ -31,14 +31,17 @@
 	  harro-password.neededForUsers = true;
 
 	  "private_keys/harro" = {
+	    owner = user;
+	    inherit (config.users.users.${user}) group;
+	    mode = "0600";
 	    path = "${homeDirectory}/.ssh/id_25519";
 	  };
 	};
     };
 
     systemd.tmpfiles.rules = [
-      "L+ ${homeDirectory}/.ssh/id_ed25519.pub - - - - ${./id_ed25519.pub}"
-    ];
+  "f ${homeDirectory}/.ssh/id_ed25519.pub 0644 ${user} ${config.users.users.${user}.group} - ${./id_ed25519.pub}"
+];
 
     users.users.${user}.hashedPasswordFile = config.sops.secrets.harro-password.path;
   };
