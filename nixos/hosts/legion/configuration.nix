@@ -2,24 +2,19 @@
   self,
   inputs,
   ...
-}:
-{
+}: {
   flake.nixosConfigurations.legion = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.hostLegion
     ];
   };
 
-  flake.nixosModules.hostLegion = { pkgs, ... }: {
+  flake.nixosModules.hostLegion = {pkgs, ...}: {
     imports = [
       self.nixosModules.core
 
-      self.nixosModules.user
-
-      self.nixosModules.grub
-      self.nixosModules.greetd
-
-      self.nixosModules.niri
+      self.nixosModules.boot
+      self.nixosModules.desktop
     ];
 
     environment.systemPackages = with pkgs; [
