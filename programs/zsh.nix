@@ -74,6 +74,39 @@
 	alias vim='nvim'
 	alias cs="vim ~/.cheatsheet.md"
 
+	# Shell integrations
+	eval "$(${lib.getExe pkgs.fzf} --zsh)"
+
+	# Zoxide
+	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview '${lib.getExe pkgs.eza} --icons --color=always $realpath'
+	eval "$(${lib.getExe pkgs.zoxide} init --cmd cd zsh)"
+
+	
+	# Set env vars
+	export EDITOR="nvim"
+
+	# Local binaries
+	PATH="$HOME/.local/bin:$PATH"
+
+	# Cargo
+	PATH="$HOME/.cargo/bin:$PATH"
+
+	# Better pkill
+	pkill ()
+	{
+	    ps aux | fzf --height 40% --layout=reverse --prompt="Select process to kill: " | awk '{print $2}' | xargs -r sudo kill
+	}
+
+	if command -v direnv > /dev/null 2>&1; then
+	  eval "$(direnv hook zsh)"
+	fi
+
+	if command -v sesh > /dev/null 2>&1; then
+	  alias s='sesh cn $(sesh l -ctzdi | fzf --ansi)'
+	fi
+
+	eval "$(ssh-agent)" >/dev/null
+
 
 	eval "$(${lib.getExe self'.packages.starship} init zsh)"
         '';
