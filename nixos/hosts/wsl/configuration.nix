@@ -18,15 +18,11 @@
       inputs.nixos-wsl.nixosModules.default
 
       self.nixosModules.shell
+      self.nixosModules.nix
     ];
 
     networking.hostName = "wsl";
     wsl.wslConf.network.hostname = "wsl";
-
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
 
     wsl.enable = true;
     wsl.defaultUser = "harro";

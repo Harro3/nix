@@ -6,6 +6,6 @@
       ...
     }:
     {
-      imports = [ self.nixosModules.user ];
+      imports = [ self.nixosModules.user self.nixosModules.nix ];
     };
 }

@@ -16,7 +16,9 @@
 
       self.nixosModules.boot
       self.nixosModules.desktop
+
       self.nixosModules.shell
+      self.nixosModules.nix
     ];
 
 
@@ -24,15 +26,6 @@
       hostName = "legion";
       networkmanager.enable = true;
     };
-
-    environment.systemPackages = with pkgs; [
-      git
-    ];
-
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
 
     system.stateVersion = "26.05";
   };
