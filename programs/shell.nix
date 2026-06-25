@@ -42,6 +42,7 @@
           pkgs.imv
           pkgs.ffmpeg-full
           pkgs.lazygit
+          pkgs.yazi
         ];
 
         env = {
