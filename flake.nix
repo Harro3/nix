@@ -14,6 +14,11 @@
     };
     nixvim.url = "github:nix-community/nixvim";
 
+    sops-nix.url = "github:mic92/sops-nix";
+    secrets = {
+      url = "git+ssh://git@github.com/Harro3/nix-secrets.git?ref=main&shallow=1";
+      flake = false;
+    };
   };
 
   outputs =

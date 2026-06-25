@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, config, ... }: {
   flake.nixosModules.user =
     {
       pkgs,
@@ -21,9 +21,7 @@
             "wheel"
             "networkmanager"
           ];
-
-          password = "password";
-        };
+	};
       };
     };
 }
