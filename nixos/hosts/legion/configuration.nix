@@ -19,6 +19,9 @@
 
       self.nixosModules.shell
       self.nixosModules.nix
+
+      self.nixosModules.bluetooth
+      self.nixosModules.pipewire
     ];
 
     networking = {
