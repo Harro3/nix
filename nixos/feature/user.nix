@@ -1,4 +1,4 @@
-{ ... }: {
+{ self, ... }: {
   flake.nixosModules.user =
     {
       pkgs,
@@ -16,14 +16,14 @@
 
       config = {
         users.users.${config.preferences.user.name} = {
-        isNormalUser = true;
-        extraGroups = [
-          "wheel"
-          "networkmanager"
-        ];
+          isNormalUser = true;
+          extraGroups = [
+            "wheel"
+            "networkmanager"
+          ];
 
-        password = "password";
+          password = "password";
+        };
       };
     };
-  };
 }
