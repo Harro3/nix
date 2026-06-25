@@ -41,7 +41,9 @@
 
     systemd.tmpfiles.rules = [
   "f ${homeDirectory}/.ssh/id_ed25519.pub 0644 ${user} ${config.users.users.${user}.group} - ${./id_ed25519.pub}"
+  "d ${homeDirectory}/.ssh 0700 ${user} ${config.users.users.${user}.group} -"
 ];
+
 
     users.users.${user}.hashedPasswordFile = config.sops.secrets.harro-password.path;
   };

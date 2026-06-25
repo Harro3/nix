@@ -12,5 +12,9 @@
 	self.nixosModules.gtk
 	self.nixosModules.secrets
       ];
+
+    config = {
+      services.openssh.enable = true;
+    };
     };
 }
