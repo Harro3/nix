@@ -34,7 +34,7 @@
 	    owner = user;
 	    inherit (config.users.users.${user}) group;
 	    mode = "0600";
-	    path = "${homeDirectory}/.ssh/id_25519";
+	    path = "${homeDirectory}/.ssh/id_ed25519";
 	  };
 	};
     };
