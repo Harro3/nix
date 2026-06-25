@@ -15,7 +15,7 @@
     }:
     let configuration = inputs.nixvim.lib.evalNixvim {
       system = pkgs.stdenv.hostPlatform.system;
-      modules = [./_config ];
+      modules = [(inputs.import-tree ./_config)];
     };
     in
     {
