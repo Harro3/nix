@@ -1,0 +1,7 @@
+{inputs, self, ...}: {
+  flake.nixosModules.virtualization = {pkgs, ...}: {
+      programs.virt-manager.enable = true;
+    virtualisation.libvirtd.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
+  };
+}

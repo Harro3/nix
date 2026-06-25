@@ -20,8 +20,7 @@
       self.nixosModules.shell
       self.nixosModules.nix
 
-      self.nixosModules.bluetooth
-      self.nixosModules.pipewire
+      self.nixosModules.virtualization
     ];
 
     networking = {
