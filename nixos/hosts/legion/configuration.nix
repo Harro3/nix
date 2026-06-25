@@ -19,6 +19,12 @@
       self.nixosModules.shell
     ];
 
+
+    networking = {
+      hostName = "legion";
+      networkmanager.enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       git
     ];

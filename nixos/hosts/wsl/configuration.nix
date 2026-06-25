@@ -20,6 +20,9 @@
       self.nixosModules.shell
     ];
 
+    networking.hostName = "wsl";
+    wsl.wslConf.network.hostname = "wsl";
+
     nix.settings.experimental-features = [
       "nix-command"
       "flakes"
