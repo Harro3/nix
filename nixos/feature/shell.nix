@@ -1,13 +1,14 @@
-{
-  self, ...
-}: {
-  flake.nixosModules.shell = {
-    pkgs,
-    config,
-    lib,
-    ...
-  }:
+{ self, ... }: {
+  flake.nixosModules.shell =
     {
-      users.users.${config.preferences.user.name}.shell = self.packages.${pkgs.stdenv.hostPlatform.system}.shell;
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
+    {
+      users.users.${config.preferences.user.name}.shell =
+        self.packages.${pkgs.stdenv.hostPlatform.system}.shell;
     };
 }
+

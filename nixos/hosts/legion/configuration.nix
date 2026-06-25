@@ -21,11 +21,17 @@
       self.nixosModules.nix
     ];
 
-
     networking = {
       hostName = "legion";
       networkmanager.enable = true;
     };
+
+    hardware.nvidia.modesetting.enable = true;
+
+    environment.systemPackages = with pkgs; [
+	firefox
+    ];
+
 
     system.stateVersion = "26.05";
   };
