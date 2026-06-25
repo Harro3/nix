@@ -12,6 +12,7 @@
 	self.nixosModules.gtk
 	self.nixosModules.secrets
 	self.nixosModules.documentation
+	self.nixosModules.locales
       ];
     };
 }
