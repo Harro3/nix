@@ -20,6 +20,13 @@
           extraGroups = [
             "wheel"
             "networkmanager"
+	    "audio"
+	    "sound"
+	    "docker"
+	    "dialout"
+	    "uucp"
+	    "libvirtd"
+	    "bosco"
           ];
 	};
       };

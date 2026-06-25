@@ -11,6 +11,7 @@
 	self.nixosModules.nix
 	self.nixosModules.gtk
 	self.nixosModules.secrets
+	self.nixosModules.documentation
       ];
     };
 }
