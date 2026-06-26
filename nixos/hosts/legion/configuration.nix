@@ -18,6 +18,7 @@
 
       self.nixosModules.boot
       self.nixosModules.desktop
+      self.nixosModules.secrets
 
       self.nixosModules.shell
       self.nixosModules.nix
