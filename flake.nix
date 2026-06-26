@@ -10,7 +10,7 @@
 
     wrappers.url = "github:Lassulus/wrappers";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-        nix-index-database = {
+    nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -22,37 +22,39 @@
       flake = false;
     };
   };
-  outputs = inputs:
-let
-  lib = inputs.nixpkgs.lib;
-
-  importTree = dir:
+  outputs =
+    inputs:
     let
-      readDirRecursive = path:
+      lib = inputs.nixpkgs.lib;
+
+      importTree =
+        dir:
         let
-          entries = builtins.readDir path;
-        in
-          lib.concatLists (lib.mapAttrsToList (name: type:
-            let full = path + "/${name}";
+          readDirRecursive =
+            path:
+            let
+              entries = builtins.readDir path;
             in
-              if type == "directory" then
-                if lib.hasPrefix "_" name
-                then []
-                else readDirRecursive full
+            lib.concatLists (
+              lib.mapAttrsToList (
+                name: type:
+                let
+                  full = path + "/${name}";
+                in
+                if type == "directory" then
+                  if lib.hasPrefix "_" name then [ ] else readDirRecursive full
+                else if lib.hasSuffix ".nix" name && name != "flake.nix" then
+                  [ full ]
+                else
+                  [ ]
+              ) entries
+            );
+        in
+        readDirRecursive dir;
 
-              else if lib.hasSuffix ".nix" name && name != "flake.nix"
-              then [ full ]
-
-              else []
-          ) entries);
+      mkModules = dir: lib.map (p: import p) (importTree dir);
     in
-      readDirRecursive dir;
-
-  mkModules = dir:
-    lib.map (p: import p) (importTree dir);
-
-in
-inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-  imports = mkModules ./.;
-};
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = mkModules ./.;
+    };
 }

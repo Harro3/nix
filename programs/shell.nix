@@ -45,6 +45,11 @@
           pkgs.ffmpeg-full
           pkgs.lazygit
           pkgs.yazi
+
+          pkgs.bash-language-server
+          pkgs.shellcheck
+          pkgs.gcc
+          pkgs.black
         ];
 
         env = {
