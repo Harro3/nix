@@ -21,6 +21,10 @@
       self.nixosModules.nix
     ];
 
+    environment.systemPackages = with pkgs; [
+      pkgs.mistral-vibe
+    ];
+
     networking.hostName = "wsl";
     wsl.wslConf.network.hostname = "wsl";
 

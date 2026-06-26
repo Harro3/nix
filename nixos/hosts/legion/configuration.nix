@@ -42,8 +42,11 @@
     };
     services.xserver.videoDrivers = [ "nvidia" ];
 
+
     environment.systemPackages = with pkgs; [
-      firefox
+      python313
+      docker-compose
+      mistral-vibe
     ];
 
     system.stateVersion = "26.05";

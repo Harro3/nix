@@ -20,6 +20,16 @@
 
         environment.systemPackages = [
           selfpkgs.kitty
+
+          pkgs.firefox
+          pkgs.vlc
+          pkgs.libreoffice
+          pkgs.discord
+          pkgs.wl-clipboard
+          pkgs.appimage-run
+          pkgs.protonmail-desktop
+          pkgs.proton-vpn
+          pkgs.proton-pass
         ];
       };
     };

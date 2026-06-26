@@ -40,6 +40,8 @@
           pkgs.ffmpeg-full
           pkgs.lazygit
           pkgs.yazi
+          pkgs.zathura
+          pkgs.jq
 
           pkgs.bash-language-server
           pkgs.shellcheck
