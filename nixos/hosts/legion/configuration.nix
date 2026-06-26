@@ -36,15 +36,14 @@
 
       prime.offload = {
         enable = true;
-	enableOffloadCmd = true;
+        enableOffloadCmd = true;
       };
     };
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
 
     environment.systemPackages = with pkgs; [
-	firefox
+      firefox
     ];
-
 
     system.stateVersion = "26.05";
   };

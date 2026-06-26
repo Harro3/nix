@@ -1,5 +1,10 @@
-{inputs, self, ...}: {
-  flake.nixosModules.nix = {pkgs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}:
+{
+  flake.nixosModules.nix = { pkgs, ... }: {
     imports = [
       inputs.nix-index-database.nixosModules.nix-index
     ];
@@ -17,21 +22,25 @@
       };
     };
 
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     programs.nix-ld.enable = true;
     nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = (with pkgs; [
-      # Nix tooling
-      nil
-      nixd
-      statix
-      alejandra
-      manix
-      nix-inspect
-    ]) ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
-      nh
-    ]);
-
+    environment.systemPackages =
+      (with pkgs; [
+        # Nix tooling
+        nil
+        nixd
+        statix
+        alejandra
+        manix
+        nix-inspect
+      ])
+      ++ (with self.packages.${pkgs.stdenv.hostPlatform.system}; [
+        nh
+      ]);
   };
 }

@@ -1,12 +1,8 @@
 { self, ... }: {
-  flake.nixosModules.boot =
-    {
-      ...
-    }:
-    {
-      imports = [
-        self.nixosModules.grub
-        self.nixosModules.greetd
-      ];
-    };
+  flake.nixosModules.boot = { ... }: {
+    imports = [
+      self.nixosModules.grub
+      self.nixosModules.greetd
+    ];
+  };
 }

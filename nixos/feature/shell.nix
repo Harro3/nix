@@ -11,4 +11,3 @@
         self.packages.${pkgs.stdenv.hostPlatform.system}.shell;
     };
 }
-

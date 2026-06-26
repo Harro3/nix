@@ -1,17 +1,12 @@
-{
-  self,
-  inputs,
-  lib,
-  ...
-}:
-{
+{ inputs, ... }: {
   perSystem =
     {
       pkgs,
       self',
       ...
     }:
-    let selfpkgs = self'.packages;
+    let
+      selfpkgs = self'.packages;
     in
     {
       packages.shell = inputs.wrappers.lib.wrapPackage {

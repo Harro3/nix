@@ -1,11 +1,12 @@
-{inputs, ...}: {
-  perSystem = {pkgs, ...}: {
+{ inputs, ... }: {
+  perSystem = { pkgs, ... }: {
     packages.nh = inputs.wrappers.lib.wrapPackage {
       inherit pkgs;
       package = pkgs.nh;
       env = {
-        NH_FLAKE="$HOME/nixos";
+        NH_FLAKE = "$HOME/nixos";
       };
     };
   };
 }
+

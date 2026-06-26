@@ -1,6 +1,5 @@
-{pkgs, ...}:
-{
-      extraPlugins = with pkgs.vimPlugins; [
-        plenary-nvim
-      ];
-    }
+{ pkgs, ... }: {
+  extraPlugins = with pkgs.vimPlugins; [
+    plenary-nvim
+  ];
+}

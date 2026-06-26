@@ -1,6 +1,6 @@
-{inputs, self, ...}: {
-  flake.nixosModules.pipewire = {pkgs, ...}: {
-      environment.systemPackages = with pkgs; [
+{
+  flake.nixosModules.pipewire = { pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
       playerctl
       pavucontrol
       pulseaudio

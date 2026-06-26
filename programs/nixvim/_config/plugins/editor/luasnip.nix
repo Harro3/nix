@@ -1,4 +1,4 @@
 {
-      plugins.friendly-snippets.enable = true;
-      plugins.luasnip.enable = true;
-    }
+  plugins.friendly-snippets.enable = true;
+  plugins.luasnip.enable = true;
+}

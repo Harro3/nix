@@ -1,4 +1,4 @@
-{ self, config, ... }: {
+{
   flake.nixosModules.user =
     {
       pkgs,
@@ -20,15 +20,15 @@
           extraGroups = [
             "wheel"
             "networkmanager"
-	    "audio"
-	    "sound"
-	    "docker"
-	    "dialout"
-	    "uucp"
-	    "libvirtd"
-	    "bosco"
+            "audio"
+            "sound"
+            "docker"
+            "dialout"
+            "uucp"
+            "libvirtd"
+            "bosco"
           ];
-	};
+        };
       };
     };
 }
