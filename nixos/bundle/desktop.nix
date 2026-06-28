@@ -15,6 +15,8 @@
         self.nixosModules.wayland
       ];
       config = {
+        services.upower.enable = true;
+
         programs.niri.enable = true;
         programs.niri.package = selfpkgs.niri;
 

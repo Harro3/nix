@@ -8,6 +8,7 @@
     {
       imports = [
         self.nixosModules.user
+        self.nixosModules.caps-remap
         self.nixosModules.nix
         self.nixosModules.gtk
         self.nixosModules.documentation

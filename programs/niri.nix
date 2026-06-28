@@ -23,7 +23,6 @@
               keyboard = {
                 xkb = {
                   layout = "us";
-                  options = "caps:escape";
                   variant = "altgr-intl";
                 };
                 numlock = _: { };
@@ -257,10 +256,10 @@
 
               "Mod+O".toggle-overview = _: { };
 
-              "Mod+Ctrl+H".set-column-width = "-5%";
-              "Mod+Ctrl+L".set-column-width = "+5%";
-              "Mod+Ctrl+J".set-window-height = "-5%";
-              "Mod+Ctrl+K".set-window-height = "+5%";
+              "Mod+Ctrl+Shift+H".set-column-width = "-5%";
+              "Mod+Ctrl+Shift+L".set-column-width = "+5%";
+              "Mod+Ctrl+Shift+J".set-window-height = "-5%";
+              "Mod+Ctrl+Shift+K".set-window-height = "+5%";
 
               "Mod+comma".focus-monitor-left = _: { };
               "Mod+period".focus-monitor-right = _: { };

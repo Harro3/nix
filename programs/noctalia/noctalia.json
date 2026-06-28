@@ -222,28 +222,13 @@
       "lockScreenBlur": 0.5,
       "lockScreenTint": 0,
       "keybinds": {
-        "keyUp": [
-          "Up"
-        ],
-        "keyDown": [
-          "Down"
-        ],
-        "keyLeft": [
-          "Left"
-        ],
-        "keyRight": [
-          "Right"
-        ],
-        "keyEnter": [
-          "Return",
-          "Enter"
-        ],
-        "keyEscape": [
-          "Esc"
-        ],
-        "keyRemove": [
-          "Del"
-        ]
+        "keyUp": ["Up"],
+        "keyDown": ["Down"],
+        "keyLeft": ["Left"],
+        "keyRight": ["Right"],
+        "keyEnter": ["Return", "Enter"],
+        "keyEscape": ["Esc"],
+        "keyRemove": ["Del"]
       },
       "reverseScroll": false,
       "smoothScrollEnabled": true
@@ -600,11 +585,7 @@
       "autoHideMs": 2000,
       "overlayLayer": true,
       "backgroundOpacity": 1,
-      "enabledTypes": [
-        0,
-        1,
-        2
-      ],
+      "enabledTypes": [0, 1, 2],
       "monitors": []
     },
     "audio": {
@@ -692,43 +673,9 @@
     "barVisible": true,
     "openedPanel": "",
     "lockScreenActive": false,
-    "wallpapers": {
-      "HDMI-A-1": "/nix/store/63j3y0bz0sq83wdv49czz07y5r51mx8r-noctalia-wallpapers/fiisvpaarsblp2blniahl15gwfny7ifx-mountains.jpg",
-      "eDP-1": "/nix/store/63j3y0bz0sq83wdv49czz07y5r51mx8r-noctalia-wallpapers/fiisvpaarsblp2blniahl15gwfny7ifx-mountains.jpg"
-    },
+    "wallpapers": {},
     "desktopWidgetsEditMode": false,
-    "display": {
-      "HDMI-A-1": {
-        "name": "HDMI-A-1",
-        "connected": true,
-        "scale": 1,
-        "width": 1920,
-        "height": 1080,
-        "x": 0,
-        "y": 0,
-        "physical_width": 540,
-        "physical_height": 300,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
-      "eDP-1": {
-        "name": "eDP-1",
-        "connected": true,
-        "scale": 1.5,
-        "width": 1706,
-        "height": 1066,
-        "x": 1920,
-        "y": 0,
-        "physical_width": 340,
-        "physical_height": 210,
-        "refresh_rate": 60002,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      }
-    },
+    "display": {},
     "notificationsState": {
       "lastSeenTs": 1782339603000
     },
