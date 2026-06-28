@@ -4,9 +4,8 @@
       inherit pkgs;
       package = pkgs.nh;
       env = {
-        NH_FLAKE = "$HOME/nixos";
+        NH_FLAKE = "$HOME/nix";
       };
     };
   };
 }
-

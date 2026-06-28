@@ -17,6 +17,7 @@
         runtimeInputs = [
           selfpkgs.nixvim
           selfpkgs.tmux
+          selfpkgs.sesh
 
           pkgs.git
           pkgs.file
