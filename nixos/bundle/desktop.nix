@@ -23,6 +23,7 @@
         environment.systemPackages = [
           selfpkgs.kitty
 
+          pkgs.spotify
           pkgs.firefox
           pkgs.vlc
           pkgs.libreoffice
