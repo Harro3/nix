@@ -1,6 +1,10 @@
 {
   perSystem =
-    { pkgs, ... }:
+    {
+      pkgs,
+      lib,
+      ...
+    }:
     let
       config = pkgs.writeText "sesh.toml" ''
         [default_session]
@@ -21,11 +25,12 @@
       '';
     in
     {
-      packages.sesh = {
-        type = "app";
-        program = "${pkgs.writeShellScript "sesh-wrapper" ''
-          exec ${pkgs.sesh}/bin/sesh -c ${config} "$@"
-        ''}";
+      packages.sesh = pkgs.writeShellApplication {
+        name = "sesh";
+        runtimeInputs = [ pkgs.sesh ];
+        text = ''
+          exec ${lib.getExe pkgs.sesh} -C ${config} "$@"
+        '';
       };
     };
 }
