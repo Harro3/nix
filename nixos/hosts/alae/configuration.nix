@@ -29,16 +29,6 @@
       networkmanager.enable = true;
     };
 
-    hardware.nvidia = {
-      modesetting.enable = true;
-
-      prime.offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-    };
-    services.xserver.videoDrivers = [ "nvidia" ];
-
 
     environment.systemPackages = with pkgs; [
       python313
