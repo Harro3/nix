@@ -29,11 +29,11 @@
       networkmanager.enable = true;
     };
 
-
     environment.systemPackages = with pkgs; [
       python313
       docker-compose
       mistral-vibe
+      docker
     ];
 
     system.stateVersion = "26.05";
