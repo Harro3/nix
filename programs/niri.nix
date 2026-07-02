@@ -251,6 +251,13 @@
               "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
               "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
               "XF86AudioMicMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+
+              "XF86AudioPlay".spawn-sh = "${lib.getExe pkgs.playerctl} play";
+              "XF86AudioPause".spawn-sh = "${lib.getExe pkgs.playerctl} pause";
+              "XF86AudioStop".spawn-sh = "${lib.getExe pkgs.playerctl} stop";
+              "XF86AudioNext".spawn-sh = "${lib.getExe pkgs.playerctl} next";
+              "XF86AudioPrev".spawn-sh = "${lib.getExe pkgs.playerctl} previous";
+
               "XF86MonBrightnessUp".spawn-sh = "${lib.getExe pkgs.brightnessctl} --class=backlight set +10%";
               "XF86MonBrightnessDown".spawn-sh = "${lib.getExe pkgs.brightnessctl} --class=backlight set 10%-";
 
