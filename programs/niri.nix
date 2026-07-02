@@ -252,8 +252,8 @@
               "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
               "XF86AudioMicMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
-              "XF86AudioPlay".spawn-sh = "${lib.getExe pkgs.playerctl} play";
-              "XF86AudioPause".spawn-sh = "${lib.getExe pkgs.playerctl} pause";
+              "XF86AudioPlay".spawn-sh = "${lib.getExe pkgs.playerctl} play-pause";
+              "XF86AudioPause".spawn-sh = "${lib.getExe pkgs.playerctl} pause-pause";
               "XF86AudioStop".spawn-sh = "${lib.getExe pkgs.playerctl} stop";
               "XF86AudioNext".spawn-sh = "${lib.getExe pkgs.playerctl} next";
               "XF86AudioPrev".spawn-sh = "${lib.getExe pkgs.playerctl} previous";
