@@ -34,6 +34,7 @@
       docker-compose
       mistral-vibe
       claude-code
+      claude-agent-acp
       docker
     ];
 
