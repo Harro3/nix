@@ -33,6 +33,7 @@
       python313
       docker-compose
       mistral-vibe
+      claude-code
       docker
     ];
 

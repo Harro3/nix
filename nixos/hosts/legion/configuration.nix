@@ -42,11 +42,11 @@
     };
     services.xserver.videoDrivers = [ "nvidia" ];
 
-
     environment.systemPackages = with pkgs; [
       python313
       docker-compose
       mistral-vibe
+      claude-code
     ];
 
     system.stateVersion = "26.05";
