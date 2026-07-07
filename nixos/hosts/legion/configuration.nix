@@ -47,6 +47,7 @@
       docker-compose
       mistral-vibe
       claude-code
+      claude-agent-acp
     ];
 
     system.stateVersion = "26.05";
