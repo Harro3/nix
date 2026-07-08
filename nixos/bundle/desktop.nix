@@ -12,9 +12,13 @@
       imports = [
         self.nixosModules.bluetooth
         self.nixosModules.pipewire
-        self.nixosModules.wayland
       ];
       config = {
+        environment.sessionVariables.NIXOS_OZONE_WL = "1";
+        environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+        environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
+        environment.sessionVariables.XDG_SESSION_TYPE = "wayland";
+
         services.upower.enable = true;
 
         programs.niri.enable = true;
@@ -23,6 +27,7 @@
         environment.systemPackages = [
           selfpkgs.kitty
 
+          pkgs.xwayland-satellite
           pkgs.spotify
           pkgs.firefox
           pkgs.vlc
