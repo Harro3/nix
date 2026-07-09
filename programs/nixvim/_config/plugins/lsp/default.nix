@@ -18,7 +18,7 @@
     marksman.enable = true;
     nil_ls.enable = true;
     pyright.enable = true;
-    # ruff.enable = true;
+    ruff.enable = true;
     lemminx.enable = true;
     yamlls.enable = true;
   };

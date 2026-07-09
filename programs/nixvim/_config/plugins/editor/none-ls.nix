@@ -17,8 +17,6 @@
       stylua.enable = true;
       clang_format.enable = true;
       prettier.enable = true;
-      black.enable = true;
-      isort.enable = true;
       cmake_format.enable = true;
       markdownlint.enable = true;
       nginx_beautifier.enable = true;
