@@ -12,6 +12,7 @@
       imports = [
         self.nixosModules.bluetooth
         self.nixosModules.pipewire
+        self.nixosModules.monitors
       ];
       config = {
         environment.sessionVariables.NIXOS_OZONE_WL = "1";
