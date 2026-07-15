@@ -22,6 +22,7 @@
       self.nixosModules.nix
 
       self.nixosModules.virtualization
+      self.nixosModules.monitors
     ];
 
     networking = {
