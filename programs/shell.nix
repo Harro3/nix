@@ -19,6 +19,7 @@
           selfpkgs.tmux
           selfpkgs.sesh
 
+          pkgs.glab
           pkgs.git
           pkgs.file
           pkgs.unzip
