@@ -27,6 +27,7 @@
             "uucp"
             "libvirtd"
             "bosco"
+            "silo"
           ];
         };
       };
