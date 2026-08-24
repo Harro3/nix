@@ -39,6 +39,7 @@
           pkgs.protonmail-desktop
           pkgs.proton-vpn
           pkgs.proton-pass
+          pkgs.musescore
         ];
       };
     };
