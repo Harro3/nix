@@ -36,6 +36,7 @@
       claude-code
       claude-agent-acp
       docker
+      bottles
     ];
 
     virtualisation.docker.enable = true;
