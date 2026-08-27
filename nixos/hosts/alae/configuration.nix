@@ -24,6 +24,11 @@
       self.nixosModules.virtualization
     ];
 
+    services.printing.enable = true;
+    services.printing.drivers = [
+      pkgs.gutenprint
+    ];
+
     networking = {
       hostName = "alae";
       networkmanager.enable = true;
