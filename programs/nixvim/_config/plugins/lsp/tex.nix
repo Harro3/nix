@@ -4,7 +4,7 @@
     settings = {
       view_method = "zathura_simple";
     };
-    texlivePackage = pkgs.texlive.combined.scheme-full;
+    texlivePackage = pkgs.texliveFull;
   };
 
   plugins.lsp.servers.texlab.enable = true;

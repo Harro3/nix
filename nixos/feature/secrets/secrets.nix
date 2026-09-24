@@ -37,6 +37,13 @@
 
             harro-password.neededForUsers = true;
 
+            ssh-config = {
+              owner = user;
+              inherit (config.users.users.${user}) group;
+              mode = "0600";
+              path = "${homeDirectory}/.ssh/config";
+            };
+
             "private_keys/harro" = {
               owner = user;
               inherit (config.users.users.${user}) group;
