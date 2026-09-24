@@ -53,12 +53,22 @@
           };
         };
 
-        systemd.tmpfiles.rules = [
-          "f ${homeDirectory}/.ssh/id_ed25519.pub 0644 ${user} ${
-            config.users.users.${user}.group
-          } - ${./id_ed25519.pub}"
-          "d ${homeDirectory}/.ssh 0700 ${user} ${config.users.users.${user}.group} -"
-        ];
+        systemd.tmpfiles.rules =
+          let
+            group = config.users.users.${user}.group;
+          in
+          [
+            "f ${homeDirectory}/.ssh/id_ed25519.pub 0644 ${user} ${group} - ${./id_ed25519.pub}"
+            "d ${homeDirectory}/.ssh 0700 ${user} ${group} -"
+
+            # sops reads the age key before the user exists, so `install-host`
+            # drops it in as root. Hand the tree back to the user afterwards.
+            "d ${homeDirectory} 0700 ${user} ${group} -"
+            "d ${homeDirectory}/.config 0755 ${user} ${group} -"
+            "d ${homeDirectory}/.config/sops 0700 ${user} ${group} -"
+            "d ${homeDirectory}/.config/sops/age 0700 ${user} ${group} -"
+            "z ${homeDirectory}/.config/sops/age/keys.txt 0600 ${user} ${group} -"
+          ];
 
         users.users.${user}.hashedPasswordFile = config.sops.secrets.harro-password.path;
       };
